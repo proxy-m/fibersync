@@ -13,7 +13,7 @@ then you may want to keep using it, but consider migrating to native async/await
 for an advanced scenario, there may still be a case for using this library, since native async/await only supports
 shallow coroutine semantics.
 
-# Guide to `asyncawait` v1.0
+# Guide to `fibersync` ( `asyncawait` + `synchronize` )  v1.0
 1. [Introduction](#1-introduction)
 2. [Feature/Gotcha Summary](#2-featuregotcha-summary)
 3. [How Does it Work?](#3-how-does-it-work)
@@ -143,7 +143,7 @@ How well does `asyncawait` perform? The answer depends on what kinds of performa
 # 6. Quick Start
 
 ### Installation
-`npm install asyncawait`
+`npm install fibersync`
 
 ### Async/Await 101
 `asyncawait` provides just two functions: `async()` and `await()`. You can reference these functions with the code:
@@ -157,16 +157,21 @@ Note the spacing after `async` and `await` in the examples. They are just plain 
 
 ### Basic Example
 ```javascript
-var async = require('asyncawait/async');
-var await = require('asyncawait/await');
+let async = require('fibersync/').async;
+let await = require('fibersync/').await;
+let dwait = require('fibersync/').dwait;
+let defer = require('fibersync/').defer;
+
 var Promise = require('bluebird');
 var fs = Promise.promisifyAll(require('fs')); // adds Async() versions that return promises
 var path = require('path');
 var _ = require('lodash');
 
+
 /** Returns the number of files in the given directory. */
 var countFiles = async (function (dir) {
-    var files = await (fs.readdirAsync(dir));
+    console.log('current dir content: ', dwait (fs.readdir('.', defer()))); // additional separate example of additional dwait-defer pair
+    var files = await (fs.readdirAsync(dir)); // old exmaple of regular async-await pair
     var paths = _.map(files, function (file) { return path.join(dir, file); });
     var stats = await (_.map(paths, function (path) { return fs.statAsync(path); })); // parallel!
     return _.filter(stats, function (stat) { return stat.isFile(); }).length;
