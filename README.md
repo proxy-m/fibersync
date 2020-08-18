@@ -1,6 +1,6 @@
 ![](https://github.com/yortus/asyncawait/workflows/Node%20CI/badge.svg)
 
-# UPDATE June 2018
+# UPDATE June 2020
 
 Do you need this library?
 
@@ -339,28 +339,12 @@ Variant of `await` that returns the original array/object, rather than a cloned 
 `asyncawait` uses the following technologies:
 
 - [node-fibers](https://github.com/laverdet/node-fibers): This implementation of coroutines is unfortunately limited to Node.js. ES6 generators may be simpler, but fibers are more flexible and support a far broader space of design possibilities. It would be great if ES6 generators were this open and flexible.
-- [bluebird](https://github.com/petkaantonov/bluebird): this promise library is both a core component of `asyncawait` and a great source of inspiration for writing high-performance JavaScript code.
-- [TypeScript](http://www.typescriptlang.org/): `asyncawait` is written in TypeScript (look in the [src folder](./src)), and includes a [type declaration file](./src/typings/asyncawait/asyncawait.d.ts). TypeScript makes JavaScript development faster, less error-prone, more scaleable, and generally more pleasant.
+- [bluebird](https://github.com/petkaantonov/bluebird): this promise library is both a core component of `asyncawait` and a great source of inspiration for writing high-performance JavaScript code. Bluebird is optional.
+- [TypeScript](http://www.typescriptlang.org/): `asyncawait` is written in TypeScript (look in the [src folder](./src)), and includes a [type declaration file](./src/typings/asyncawait/asyncawait.d.ts). TypeScript makes JavaScript development faster, less error-prone, more scaleable, and generally more pleasant. TypeScript is optional.
 - [lodash](http://lodash.com/): underscore, but better.
 
 
-# 12. License
-Copyright (c) 2014-2015 Troy Gerwien
+# 12. MIT License
+See [LICENSE.md] file.
+Last update year was: 2020.
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.

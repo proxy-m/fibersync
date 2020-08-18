@@ -1,3 +1,4 @@
+Copyright (c) 2020 Mikhail B.
 Copyright (c) 2014-2016 Troy Gerwien
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
