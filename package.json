@@ -1,7 +1,7 @@
 {
-  "name": "asyncawait",
-  "description": "async/await for node.js",
-  "version": "3.0.0",
+  "name": "fibersync",
+  "description": "fibersync - Callbacks and promises simplification for Node.js with synchronized+asyncawait (by fibers, bluebird and lodash)",
+  "version": "3.2.2",
   "keywords": [
     "async/await",
     "async",
@@ -20,19 +20,16 @@
     "synchronous"
   ],
   "main": "index.js",
-  "homepage": "https://github.com/yortus/asyncawait",
+  "homepage": "https://github.com/proxy-m/fibersync",
   "repository": {
     "type": "git",
-    "url": "git://github.com/yortus/asyncawait.git"
+    "url": "git://github.com:proxym-m/fibersync.git"
   },
   "bugs": {
-    "url": "http://github.com/yortus/asyncawait/issues"
+    "url": "http://github.com/proxy-m/fibersync/issues"
   },
   "license": "MIT",
   "author": {
-    "name": "Troy Gerwien",
-    "email": "yortus@gmail.com",
-    "url": "http://github.com/yortus/"
   },
   "readmeFilename": "README.md",
   "scripts": {
