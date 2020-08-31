@@ -157,10 +157,10 @@ Note the spacing after `async` and `await` in the examples. They are just plain 
 
 ### Basic Example
 ```javascript
-let async = require('fibersync/').async;
-let await = require('fibersync/').await;
-let dwait = require('fibersync/').dwait;
-let defer = require('fibersync/').defer;
+const async = require('./fibersync/').async;
+const await = require('./fibersync/').await;
+const dwait = require('./fibersync/').dwait;
+const defer = require('./fibersync/').defer;
 
 var Promise = require('bluebird');
 var fs = Promise.promisifyAll(require('fs')); // adds Async() versions that return promises
@@ -304,10 +304,32 @@ The `await.in` variant is like `await`, but does not clone the awaitable express
 ### Handling HTTP Routes with Express
 Coming soon...
 
-### Asynchronous Testing with Mocha
-Coming soon...
+### Asynchronous Testing with Mocha (or Jasmine)
+```js
+const assert = require('assert');
+const fs = require('fs');
 
+const dwait = require('./fibersync/').dwait;
+const defer = require('./fibersync/').defer;
+const asyncBdd = require('./fibersync/').asyncBdd;
 
+const {it, before, after} = asyncBdd.wrap(global); // main call in the async tests example
+
+describe('thing', function() {
+  let data;
+  before(function() {
+    // We can load things in the before hook.
+    data = dwait (fs.readFile('./data', 'utf-8', defer()));
+  });
+
+  it('should have data', function() {
+    // We can arbitrarily yield in it blocks.
+    dwait(setImmediate(defer()));
+
+    assert(typeof data === 'string' && data.length > 0);
+  });
+});
+```
 
 # 10. API Reference
 
