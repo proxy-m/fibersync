@@ -23,7 +23,7 @@
   "homepage": "https://github.com/proxy-m/fibersync",
   "repository": {
     "type": "git",
-    "url": "git://github.com:proxym-m/fibersync.git"
+    "url": "git://github.com:proxy-m/fibersync.git"
   },
   "bugs": {
     "url": "http://github.com/proxy-m/fibersync/issues"
