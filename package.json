@@ -1,7 +1,7 @@
 {
   "name": "fibersync",
   "description": "fibersync - Callbacks and promises simplification for Node.js with synchronized+asyncawait (by fibers, bluebird and lodash)",
-  "version": "3.2.2",
+  "version": "3.2.4",
   "keywords": [
     "async/await",
     "async",
